@@ -55,7 +55,9 @@ class TestNote(unittest.TestCase):
 
         la = Note('A')
         self.assertEqual(la, Note('A'))
+        self.assertEqual(la, 9)
         self.assertNotEqual(la, Note('A#'))
+        self.assertNotEqual(la, 10)
         self.assertNotEqual(la, Note('A1'))
         self.assertTrue(la == Note('A'))
         self.assertTrue(la == Note('A0'))
@@ -66,6 +68,9 @@ class TestNote(unittest.TestCase):
         self.assertTrue(la > Note('A-1'))
         self.assertTrue(la <= Note('A'))
         self.assertTrue(la >= Note('A'))
+        self.assertTrue(la <= Note('B'))
+        self.assertTrue(la <= Note('A1'))
+        self.assertTrue(la >= Note('A-1'))
 
         self.assertEqual(la + 1, Note('A#'))
         self.assertEqual(la - 1, Note('Ab'))
