@@ -22,13 +22,50 @@ class TestNote(unittest.TestCase):
                      (0, 'C'),
                      (12, 'C1'),
                      (-12, 'C-1'),
-                     (-13, 'B-2')]:
+                     (-13, 'B-2'),
+                     (Note('A'), 'A')]:
+            if isinstance(note, tuple):
+                note_name , expect = note
+            else:
+                note_name = expect = note
+            self.assertEqual(str(Note(note_name)), expect)
+
+    def test_repr(self):
+        for note in ['A',
+                     'A1',
+                     ('C#', 'C# Db'),
+                     ('Bb', 'A# Bb'),
+                     'C2',
+                     'C-2',
+                     ('C0', 'C'),
+                     'G-20',
+                     (1, 'C# Db'),
+                     (0, 'C'),
+                     (12, 'C1'),
+                     (-12, 'C-1'),
+                     (-13, 'B-2'),
+                     (Note('A#'), 'A# Bb')]:
             if isinstance(note, tuple):
                 note_name , expect = note
             else:
                 note_name = expect = note
             self.assertEqual(repr(Note(note_name)), expect)
 
+    def test_operators(self):
+
+        la = Note('A')
+        self.assertEqual(la, Note('A'))
+        self.assertNotEqual(la, Note('A#'))
+        self.assertNotEqual(la, Note('A1'))
+        self.assertTrue(la == Note('A'))
+        self.assertTrue(la == Note('A0'))
+        self.assertTrue(la != Note('B'))
+
+        self.assertTrue(la < Note('B'))
+        self.assertTrue(la < Note('A1'))
+        self.assertTrue(la > Note('A-1'))
+        self.assertTrue(la <= Note('A'))
+        self.assertTrue(la >= Note('A'))
 
 
 
