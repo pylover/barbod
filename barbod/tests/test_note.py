@@ -67,6 +67,13 @@ class TestNote(unittest.TestCase):
         self.assertTrue(la <= Note('A'))
         self.assertTrue(la >= Note('A'))
 
+        self.assertEqual(la + 1, Note('A#'))
+        self.assertEqual(la - 1, Note('Ab'))
+        self.assertEqual(la + 24, Note('A2'))
+        self.assertEqual(la - 12, Note('A-1'))
+
+        la += 1
+        self.assertEqual(la, Note('A#'))
 
 
 if __name__ == '__main__':

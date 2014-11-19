@@ -70,3 +70,9 @@ class Note(object):
 
     def __hash__(self):
         return self._c_offset
+
+    def __add__(self, other):
+        return Note(self._c_offset + other)
+
+    def __sub__(self, other):
+        return Note(self._c_offset - other)
