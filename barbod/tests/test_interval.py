@@ -44,13 +44,13 @@ class TestInterval(unittest.TestCase):
         self.assertTrue(la >= Interval(99))
         self.assertTrue(la >= 99)
 
-        # self.assertEqual(la + 1, Interval('A#'))
-        # self.assertEqual(la - 1, Interval('Ab'))
-        # self.assertEqual(la + 24, Interval('A2'))
-        # self.assertEqual(la - 12, Interval('A-1'))
-        #
-        # la += 1
-        # self.assertEqual(la, Interval('A#'))
+        self.assertEqual(la + 1, Interval(101))
+        self.assertEqual(la + 1, 101)
+        self.assertEqual(la - 1, Interval(99))
+        self.assertEqual(la - 1, 99)
+
+        la += 1
+        self.assertEqual(la, Interval(101))
 
 
 if __name__ == '__main__':
