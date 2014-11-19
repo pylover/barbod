@@ -51,6 +51,10 @@ class TestInterval(unittest.TestCase):
 
         la += 1
         self.assertEqual(la, Interval(101))
+        la -= 1
+        self.assertEqual(la, Interval(100))
+        self.assertEqual(la, 100)
+
 
 
 if __name__ == '__main__':
