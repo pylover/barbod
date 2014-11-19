@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 __author__ = 'vahid'
 
-NOTE_OFFSETS = {
+CHROMATIC_INDEXES = {
     'C': 0,
     'C#': 1,
     'Db': 1,
@@ -21,7 +21,7 @@ NOTE_OFFSETS = {
     'B': 11
 }
 
-NOTE_NAMES = {
+CHROMATIC_NAMES = {
     0: ('C',),
     1: ('C#', 'Db'),
     2: ('D',),
@@ -35,3 +35,6 @@ NOTE_NAMES = {
     10: ('A#', 'Bb'),
     11: ('B',)
 }
+
+OCTAVE_CENTS = 1200 #  cents
+CHROMATIC_INTERVAL = 100 #  cents

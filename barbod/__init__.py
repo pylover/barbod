@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 
-from .note import Note
 from .interval import Interval
+from .note import Note
 
 __author__ = 'vahid'

@@ -14,11 +14,11 @@ class TestInterval(unittest.TestCase):
 
     def test_other_units(self):
         i = Interval(1200)
-        self.assertEqual(i.semitones, i.cents / 100.0)
-        self.assertEqual(i.quarter_tones, i.cents / 50.0)
-        self.assertEqual(i.farabs, i.cents / 8.333333)
-        self.assertEqual(i.mems, i.cents / 5.85365)
-        self.assertEqual(i.savarts, i.cents / 4.0)
+        self.assertEqual(i.to_semitone, i.cents / 100.0)
+        self.assertEqual(i.to_quarter_tone, i.cents / 50.0)
+        self.assertEqual(i.to_farab, i.cents / 8.333333)
+        self.assertEqual(i.to_mem, i.cents / 5.85365)
+        self.assertEqual(i.to_savart, i.cents / 4.0)
 
     def test_operators(self):
         la = Interval(100)

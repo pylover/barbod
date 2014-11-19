@@ -18,11 +18,11 @@ class TestNote(unittest.TestCase):
                      'C-2',
                      ('C0', 'C'),
                      'G-20',
-                     (1, 'C#'),
+                     (100, 'C#'),
                      (0, 'C'),
-                     (12, 'C1'),
-                     (-12, 'C-1'),
-                     (-13, 'B-2'),
+                     (1200, 'C1'),
+                     (-1200, 'C-1'),
+                     (-1300, 'B-2'),
                      (Note('A'), 'A')]:
             if isinstance(note, tuple):
                 note_name , expect = note
@@ -39,11 +39,11 @@ class TestNote(unittest.TestCase):
                      'C-2',
                      ('C0', 'C'),
                      'G-20',
-                     (1, 'C# Db'),
+                     (100, 'C# Db'),
                      (0, 'C'),
-                     (12, 'C1'),
-                     (-12, 'C-1'),
-                     (-13, 'B-2'),
+                     (1200, 'C1'),
+                     (-1200, 'C-1'),
+                     (-1300, 'B-2'),
                      (Note('A#'), 'A# Bb')]:
             if isinstance(note, tuple):
                 note_name , expect = note
@@ -55,9 +55,9 @@ class TestNote(unittest.TestCase):
 
         la = Note('A')
         self.assertEqual(la, Note('A'))
-        self.assertEqual(la, 9)
+        self.assertEqual(la, 900)
         self.assertNotEqual(la, Note('A#'))
-        self.assertNotEqual(la, 10)
+        self.assertNotEqual(la, 1000)
         self.assertNotEqual(la, Note('A1'))
         self.assertTrue(la == Note('A'))
         self.assertTrue(la == Note('A0'))
@@ -72,12 +72,12 @@ class TestNote(unittest.TestCase):
         self.assertTrue(la <= Note('A1'))
         self.assertTrue(la >= Note('A-1'))
 
-        self.assertEqual(la + 1, Note('A#'))
-        self.assertEqual(la - 1, Note('Ab'))
-        self.assertEqual(la + 24, Note('A2'))
-        self.assertEqual(la - 12, Note('A-1'))
+        self.assertEqual(la + 100, Note('A#'))
+        self.assertEqual(la - 100, Note('Ab'))
+        self.assertEqual(la + 2400, Note('A2'))
+        self.assertEqual(la - 1200, Note('A-1'))
 
-        la += 1
+        la += 100
         self.assertEqual(la, Note('A#'))
 
 
